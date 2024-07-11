@@ -1,0 +1,38 @@
+Fetch Types in Hibernate:
+------------------------------------------
+EAGER
+Load the associated data of the other entity, beforehand which is bit costly.
+
+LAZY
+Load the associated data of the other entity, only when requested. This is done on demand.
+
+There are specified fetching types for each relationship type which is applied by Hibernate by default.
+OneToMany: LAZY
+ManyToOne: EAGER
+ManyToMany: LAZY
+OneToOne: EAGER
+
+
+If we are using Lazy --> Ensure to have @Transactional to Fetch Other Entity
+
+@Transaction --> Keep the Persistnat context till end
+
+
+Inheritence:
+Best approach --> Joined
+
+JPA Caching:
+-----------------------
+First Level Cache - Default:
+Second Level Cache - Ecache
+
+
+@Embeddable --> Seperate Entity
+@Embededed -- To persist with in the entity
+
+@ToString --> Avoidable --> JPA cause few issues
+
+For Enums:
+-------------------
+ @Enumerated(EnumType.STRING)
+  private Role role;
